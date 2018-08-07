@@ -63,7 +63,7 @@ export class AuthenticationService {
 
   private request(method: 'post'|'get', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
     let base;
-    let apiURL = 'http://192.168.43.48:3000';
+    let apiURL = 'http://192.168.8.101:3000';
     if (method === 'post') {
       base = this.http.post(`${apiURL}/auth/${type}`, user);
     } else {
