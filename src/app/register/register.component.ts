@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
       indv:true
      });
   }
-
   ngOnInit() {
   }
   onSubmit(){

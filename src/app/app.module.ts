@@ -15,6 +15,10 @@ import { ProfileComponent } from './profile/profile.component';
 import {AuthenticationService} from './authentication.service';
 import { HttpClientModule} from '@angular/common/http';
 import {AuthGuardService} from './auth-guard.service';
+import { PheaderComponent } from './pheader/pheader.component';
+import { WorkComponent } from './work/work.component';
+import { SessionComponent } from './session/session.component';
+import { CvComponent } from './cv/cv.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import {AuthGuardService} from './auth-guard.service';
     SigninComponent,
     HomeComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    PheaderComponent,
+    WorkComponent,
+    SessionComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,
