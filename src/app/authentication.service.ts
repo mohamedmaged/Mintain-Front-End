@@ -63,7 +63,7 @@ export class AuthenticationService {
 
   private request(method: 'post'|'get', type: 'login'|'register'|'profile', user?: TokenPayload): Observable<any> {
     let base;
-    let apiURL = 'http://192.168.8.101:3000';
+    let apiURL = 'http://192.168.43.48:3000';
     if (method === 'post') {
       base = this.http.post(`${apiURL}/auth/${type}`, user);
     } else {
@@ -99,5 +99,36 @@ export class AuthenticationService {
     this.token = '';
     window.localStorage.removeItem('mean-token');
     this.router.navigateByUrl('/');
+  }
+  public getwork(): Observable <any>{
+    let apiURL = 'http://192.168.43.48:3000';
+    let base = this.http.get(`${apiURL}/auth/worklist`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+  
+
+    const request = base.pipe(
+      map((data: TokenResponse) => {
+
+        if (data.token) {
+          this.saveToken(data.token);
+        }
+        return data;
+      })
+    );
+    return request;
+  }
+  public getsession(): Observable <any>{
+    let apiURL = 'http://192.168.43.48:3000';
+    let base = this.http.get(`${apiURL}/auth/sessionlist`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+  
+    const request = base.pipe(
+      map((data: TokenResponse) => {
+
+        if (data.token) {
+          this.saveToken(data.token);
+        }
+        return data;
+      })
+    );
+    return request;
   }
 }

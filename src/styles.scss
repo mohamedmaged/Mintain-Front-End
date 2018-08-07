@@ -1227,4 +1227,14 @@ body {
       padding: 10px;
     }
   }
-  
+  $background-moredark: rgb(32, 151, 48);
+  .activee {
+    background: $background-moredark;
+}
+.cardm{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.card {
+  margin-top: 20px;
+}

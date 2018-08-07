@@ -19,6 +19,7 @@ import { PheaderComponent } from './pheader/pheader.component';
 import { WorkComponent } from './work/work.component';
 import { SessionComponent } from './session/session.component';
 import { CvComponent } from './cv/cv.component';
+import {WorkService} from './work.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { CvComponent } from './cv/cv.component';
     MatButtonModule,
 HttpClientModule
   ],
-  providers: [AuthenticationService, AuthGuardService],
+  providers: [AuthenticationService, AuthGuardService,WorkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

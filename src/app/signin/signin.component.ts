@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit {
   }
   onSubmit(){
     this.auth.login(this.elegantForm.value).subscribe(() => {
-      this.router.navigateByUrl('/profile');
+      this.router.navigateByUrl('/work');
     }, (err) => {
       console.error(err);
     });

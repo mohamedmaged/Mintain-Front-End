@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-session',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionComponent implements OnInit {
 
-  constructor() { }
+  sessions:any[]=[];
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
+    this.auth.getwork().subscribe(user => {
+      for (let key in user){
+        let val = user[key];  
+        this.sessions.push(val);
+      }
+      console.log(this.sessions);
+    }, (err) => {
+      console.error(err);
+    });
   }
 
 }
