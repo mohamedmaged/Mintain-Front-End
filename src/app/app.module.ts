@@ -11,7 +11,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
-
+import { ProfileComponent } from './profile/profile.component';
+import {AuthenticationService} from './authentication.service';
+import { HttpClientModule} from '@angular/common/http';
+import {AuthGuardService} from './auth-guard.service';
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     SigninComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +33,10 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

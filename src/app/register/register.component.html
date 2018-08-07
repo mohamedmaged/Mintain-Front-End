@@ -1,3 +1,62 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto my-5">
+      <section class="form-elegant">
+        <mdb-card>
+          <mdb-card-body class="mx-4">
+           
+            <div class="text-center">
+              <h3 class="dark-grey-text mb-5">
+                <strong>Register</strong>
+              </h3>
+            </div>
+            <form novalidate [formGroup]="elegantForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+              <div class="md-form">
+                <input type="text" id="email" formControlName="email"  class="form-control"  mdbInputDirective>
+                <label for="email">Your email</label>
+              </div>
+  
+              <div class="md-form pb-3">
+                <input type="password" id="password" formControlName="password" class="form-control" mdbInputDirective>
+                <label for="password">Your password</label>
+                <p class="font-small blue-text d-flex justify-content-end">Forgot
+                  <a href="#" class="blue-text ml-1"> Password?</a>
+                </p>
+              </div> 
+
+             <form class="form-inline radio">
+                <div class="form-check mr-3">
+                    <input class="form-check-input" name="group1" type="radio" id="radio11" checked="checked" mdbInputDirective>
+                    <label class="form-check-label" for="radio11">Individual</label>
+                </div>
+
+                <div class="form-check mr-3">
+                    <input class="form-check-input" name="group1" type="radio" id="radio21" mdbInputDirective>
+                    <label class="form-check-label" for="radio21">Organization</label>
+                </div>
+              </form>
+            </form>
+            <div class="text-center mb-3">
+              <button type="button" mdbBtn  block="true" rounded="true" color="success" class="z-depth-1a waves-light" (click)="onSubmit()" [disabled]="fform.form.invalid" mdbWavesEffect>Register </button>
+            </div>
+            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Register with:</p>
+  
+            <div class="row my-3 d-flex justify-content-center">
+             
+              <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                <i class="fa fa-linkedin blue-text text-center"></i>
+              </button>
+            </div>
+          </mdb-card-body>
+     
+          <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">Not a member?
+              <a href="#" class="blue-text ml-1"> Sign Up</a>
+            </p>
+          </div>
+        </mdb-card>
+  
+      </section>
+    </div>
+  </div>
+  </div>
